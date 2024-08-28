@@ -1,0 +1,185 @@
+dia laboral 
+
+PERDIDAS
+
+  %%%%%%%%%%%barraje120%%%%%%%%%%%%%%%%%
+
+perdidas_nevera_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje120ac','Range','E3:E26');
+x_nevera_pe_lab = cell2mat(perdidas_nevera_laboral);
+perdidas_luz_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje120ac','Range','Q3:Q26');
+y_luz_pe_lab = cell2mat(perdidas_luz_laboral);
+perdidas_convertidorPV_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje120ac','Range','AF3:AF26');
+z_convertidorPV_pe_lab = cell2mat(perdidas_convertidorPV_laboral);
+
+sumatoria_perdidas_par_dia_laboral = bsxfun(@plus, x_nevera_pe_lab, y_luz_pe_lab);
+suma_total_perdidas_dialab=bsxfun(@plus,sumatoria_perdidas_par_dia_laboral,z_convertidorPV_pe_lab);
+
+
+            %%%%%%%%%%%barraje220%%%%%%%%%%%%%%%%%%%%%
+perdidas_tv_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','E3:E26');
+x_tv_pe_lab=cell2mat(perdidas_tv_laboral);
+perdidas_lavadora_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','Q3:Q26');
+y_lavadora_pe_lab=cell2mat(perdidas_lavadora_laboral);
+perdidas_nevera_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','AC3:AC26');
+z_nevera_pe_lab=cell2mat(perdidas_nevera_laboral);
+perdidas_luz_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','AO3:AO26');
+w_luz_pe_lab=cell2mat(perdidas_luz_laboral);
+perdidas_aire_laboral_in=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','BA3:BA26');
+f_aire_pe_lab_in=cell2mat(perdidas_aire_laboral_in);
+perdidas_aire_laboral_ve=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','BM3:BM26');
+v_aire_pe_lab_ve=cell2mat(perdidas_aire_laboral_ve);
+perdidas_convertidorPV_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','CD3:CD26');
+u_convertidorPV_pe_lab=cell2mat(perdidas_convertidorPV_laboral);
+
+suma_total_perdidas_dialab = zeros(24, 1); % Crea una matriz de ceros para almacenar la sumatoria total
+for i = 1:24 % Recorre las filas
+  suma_total_perdidas_dialab(i) = sum([x_tv_pe_lab(i), y_lavadora_pe_lab(i), z_nevera_pe_lab(i), w_luz_pe_lab(i), f_aire_pe_lab_in(i), v_aire_pe_lab_ve(i),u_convertidorPV_pe_lab(i)]); % Suma los elementos correspondientes en cada fila
+end
+      %%%%%%%%%%%%barraje48%%%%%%%%%%%%%%%%%%%%
+perdidas_tv_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','E3:E26');
+x_tv_pe_lab=cell2mat(perdidas_tv_laboral);
+perdidas_lavadora_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','Q3:Q26');
+y_lavadora_pe_lab=cell2mat(perdidas_lavadora_laboral);
+perdidas_nevera_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','AC3:AC26');
+z_nevera_pe_lab=cell2mat(perdidas_nevera_laboral);
+perdidas_luz_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','AO3:AO26');
+w_luz_pe_lab=cell2mat(perdidas_luz_laboral);
+perdidas_aire_laboral_in=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','BA3:BA26');
+f_aire_pe_lab_in=cell2mat(perdidas_aire_laboral_in);
+perdidas_aire_laboral_ve=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','BM3:BM26');
+v_aire_pe_lab_ve=cell2mat(perdidas_aire_laboral_ve);
+perdidas_convertidorPV_pe_lab=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','CD3:CD26');
+u_convertidorPV_pe_lab=cell2mat(perdidas_convertidorPV_pe_lab);
+perdidas_convertidorDG_pe_lab=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','CZ3:CZ26');
+r_convertidorDG_pe_lab=cell2mat(perdidas_convertidorDG_pe_lab);
+
+suma_total_perdidas_dialab = zeros(24, 1); % Crea una matriz de ceros para almacenar la sumatoria total
+for i = 1:24 % Recorre las filas
+    suma_total_perdidas_dialab(i) = sum([x_tv_pe_lab(i), y_lavadora_pe_lab(i), z_nevera_pe_lab(i), w_luz_pe_lab(i), f_aire_pe_lab_in(i), v_aire_pe_lab_ve(i),u_convertidorPV_pe_lab(i),r_convertidorDG_pe_lab(i)]); % Suma los elementos correspondientes en cada fila
+end
+                                    %%%%%%%%%%%%%%barraje12%%%%%%%%%%%%%%%%%
+perdidas_tv_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','E3:E26');
+x_tv_pe_lab=cell2mat(perdidas_tv_laboral);
+perdidas_lavadora_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','Q3:Q26');
+y_lavadora_pe_lab=cell2mat(perdidas_lavadora_laboral);
+perdidas_nevera_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','AC3:AC26');
+z_nevera_pe_lab=cell2mat(perdidas_nevera_laboral);
+perdidas_aire_laboral_in=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','AO3:AO26');
+f_aire_pe_lab_in=cell2mat(perdidas_aire_laboral_in);
+perdidas_aire_laboral_ve=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','BA3:BA26');
+v_aire_pe_lab_ve=cell2mat(perdidas_aire_laboral_ve);
+perdidas_convertidorPV_pe_lab=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','BQ3:BQ26');
+u_convertidorPV_pe_lab=cell2mat(perdidas_convertidorPV_pe_lab);
+perdidas_convertidorDG_pe_lab=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','CK3:CK26');
+r_convertidorDG_pe_lab=cell2mat(perdidas_convertidorDG_pe_lab);
+
+suma_total_perdidas_dialab = zeros(24, 1); % Crea una matriz de ceros para almacenar la sumatoria total
+for i = 1:24 % Recorre las filas
+    suma_total_perdidas_dialab(i) = sum([x_tv_pe_lab(i), y_lavadora_pe_lab(i), z_nevera_pe_lab(i), f_aire_pe_lab_in(i), v_aire_pe_lab_ve(i),u_convertidorPV_pe_lab(i),r_convertidorDG_pe_lab(i)]); % Suma los elementos correspondientes en cada fila
+end     
+
+
+%%%%%%%%%%%%dia no laboral%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            %%%%%%%%%%%%%%%%%%barraje120%%%%%%%%%%%%%%%%%
+perdidas_nevera_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje120ac','Range','K3:K26');
+x_nevera_pe_nolab = cell2mat(perdidas_nevera_nolaboral);
+perdidas_luz_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje120ac','Range','W3:W26');
+y_luz_pe_nolab = cell2mat(perdidas_luz_nolaboral);
+perdidas_convertidorPV_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje120ac','Range','AO3:AO26');
+z_convertidorPV_pe_nolab = cell2mat(perdidas_convertidorPV_nolaboral);
+
+sumatoria_perdidas_par_dia_nolaboral = bsxfun(@plus, x_nevera_pe_nolab, y_luz_pe_nolab);
+suma_total_perdidas_dia_nolab=bsxfun(@plus,sumatoria_perdidas_par_dia_nolaboral,z_convertidorPV_pe_nolab);
+
+        %%%%%%%%%%%%%%%%%%barraje220%%%%%%%%%%%%%
+perdidas_tv_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','K3:K26');
+x_tv_pe_nolab=cell2mat(perdidas_tv_nolaboral);
+perdidas_lavadora_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','W3:W26');
+y_lavadora_pe_nolab=cell2mat(perdidas_lavadora_nolaboral);
+perdidas_nevera_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','AI3:AI26');
+z_nevera_pe_nolab=cell2mat(perdidas_nevera_nolaboral);
+perdidas_luz_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','AU3:AU26');
+w_luz_pe_nolab=cell2mat(perdidas_luz_nolaboral);
+perdidas_aire_nolaboral_in=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','BG3:BG26');
+f_aire_pe_nolab_in=cell2mat(perdidas_aire_nolaboral_in);
+perdidas_aire_nolaboral_ve=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','BS3:BS26');
+v_aire_pe_nolab_ve=cell2mat(perdidas_aire_nolaboral_ve);
+perdidas_convertidorPV_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje220ac','Range','CO3:CO26');
+u_convertidorPV_pe_nolab=cell2mat(perdidas_convertidorPV_nolaboral);
+
+suma_total_perdidas_dia_nolab = zeros(24, 1); % Crea una matriz de ceros para almacenar la sumatoria total
+for i = 1:24 % Recorre las filas
+  suma_total_perdidas_dia_nolab(i) = sum([x_tv_pe_nolab(i), y_lavadora_pe_nolab(i), z_nevera_pe_nolab(i), w_luz_pe_nolab(i), f_aire_pe_nolab_in(i), v_aire_pe_nolab_ve(i),u_convertidorPV_pe_nolab(i)]); % Suma los elementos correspondientes en cada fila
+end
+
+       %%%%%%%%%%%%%baraje48%%%%%%%%%%%%%%%%%%%%%
+perdidas_tv_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','K3:K26');
+x_tv_pe_nolab=cell2mat(perdidas_tv_nolaboral);
+perdidas_lavadora_laboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','W3:W26');
+y_lavadora_pe_nolab=cell2mat(perdidas_lavadora_laboral);
+perdidas_nevera_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','AI3:AI26');
+z_nevera_pe_nolab=cell2mat(perdidas_nevera_laboral);
+perdidas_luz_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','AU3:AU26');
+w_luz_pe_nolab=cell2mat(perdidas_luz_nolaboral);
+perdidas_aire_nolaboral_in=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','BG3:BG26');
+f_aire_pe_nolab_in=cell2mat(perdidas_aire_nolaboral_in);
+perdidas_aire_nolaboral_ve=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','BS3:BS26');
+v_aire_pe_nolab_ve=cell2mat(perdidas_aire_nolaboral_ve);
+perdidas_convertidorPV_pe_nolab=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','CO3:CO26');
+u_convertidorPV_pe_nolab=cell2mat(perdidas_convertidorPV_pe_nolab);
+perdidas_convertidorDG_pe_nolab=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje48dc','Range','DK3:DK26');
+r_convertidorDG_pe_nolab=cell2mat(perdidas_convertidorDG_pe_nolab);
+
+
+suma_total_perdidas_dia_nolab = zeros(24, 1); % Crea una matriz de ceros para almacenar la sumatoria total
+for i = 1:24 % Recorre las filas
+    suma_total_perdidas_dia_nolab(i) = sum([x_tv_pe_nolab(i), y_lavadora_pe_nolab(i), z_nevera_pe_nolab(i), w_luz_pe_nolab(i), f_aire_pe_nolab_in(i), v_aire_pe_nolab_ve(i),u_convertidorPV_pe_nolab(i),r_convertidorDG_pe_nolab(i)]); % Suma los elementos correspondientes en cada fila
+end
+         %%%%%%%%%%%%barraje12%%%%%%%%%%%%%%%%%%%%%%    
+perdidas_tv_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','K3:K26');
+x_tv_pe_nolab=cell2mat(perdidas_tv_nolaboral);
+perdidas_lavadora_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','W3:W26');
+y_lavadora_pe_nolab=cell2mat(perdidas_lavadora_nolaboral);
+perdidas_nevera_nolaboral=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','AI3:AI26');
+z_nevera_pe_nolab=cell2mat(perdidas_nevera_nolaboral);
+perdidas_aire_nolaboral_in=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','AU3:AU26');
+f_aire_pe_nolab_in=cell2mat(perdidas_aire_nolaboral_in);
+perdidas_aire_nolaboral_ve=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','BG3:BG26');
+v_aire_pe_nolab_ve=cell2mat(perdidas_aire_nolaboral_ve);
+perdidas_convertidorPV_pe_nolab=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','CA3:CA26');
+u_convertidorPV_pe_nolab=cell2mat(perdidas_convertidorPV_pe_nolab);
+perdidas_convertidorDG_pe_nolab=readcell('perdidas barrajes mayoria carga AC.xlsx','Sheet','barraje12dc','Range','CU3:CU26');
+r_convertidorDG_pe_nolab=cell2mat(perdidas_convertidorDG_pe_nolab);
+
+suma_total_perdidas_dia_nolab = zeros(24, 1); % Crea una matriz de ceros para almacenar la sumatoria total
+for i = 1:24 % Recorre las filas
+    suma_total_perdidas_dia_nolab(i) = sum([x_tv_pe_nolab(i), y_lavadora_pe_nolab(i), z_nevera_pe_nolab(i), f_aire_pe_nolab_in(i), v_aire_pe_nolab_ve(i),u_convertidorPV_pe_nolab(i),r_convertidorDG_pe_nolab(i)]); % Suma los elementos correspondientes en cada fila
+end 
+    
+
+
+%%%%%%%%%%%%%%%%%%%%produccion PV%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%barraje120%%%%%%%%%%%%%%%%%%%%
+potencia_pv_IN= readcell('generacion_PV.xlsx','Sheet','invierno','Range','D3:D26'); % logra encender el convertidor de 10 a 13
+x_generacion_pv_IN=cell2mat(potencia_pv_IN);
+potencia_pv_VE= readcell('generacion_PV.xlsx','Sheet','verano','Range','D3:D26'); % logra encender el convertidor de 10 a 13
+y_generacion_pv_VE=cell2mat(potencia_pv_VE);
+
+%%%%%%%%%%%%%%%%%%%%%%barraje220%%%%%%%%%%%%%%%%%%%
+% potencia_pv_IN= readcell('generacion_PV.xlsx','Sheet','invierno','Range','K3:K26'); 
+% x_generacion_pv_IN=cell2mat(potencia_pv_IN);
+% potencia_pv_VE= readcell('generacion_PV.xlsx','Sheet','verano','Range','K3:K26'); 
+% y_generacion_pv_VE=cell2mat(potencia_pv_VE);
+
+%%%%%%%%%%%%%%%%%%%%%barraje48%%%%%%%%%%%%%%%%%%%%
+% potencia_pv_IN= readcell('generacion_PV.xlsx','Sheet','invierno','Range','R3:R26'); 
+% x_generacion_pv_IN=cell2mat(potencia_pv_IN);
+% potencia_pv_VE= readcell('generacion_PV.xlsx','Sheet','verano','Range','R3:R26'); 
+% y_generacion_pv_VE=cell2mat(potencia_pv_VE);
+%%%%%%%%%%%%%%%%%%%%barraje12%%%%%%%%%%%%%%%%%%%%%
+% potencia_pv_IN= readcell('generacion_PV.xlsx','Sheet','invierno','Range','Y3:Y26'); 
+% x_generacion_pv_IN=cell2mat(potencia_pv_IN);
+% potencia_pv_VE= readcell('generacion_PV.xlsx','Sheet','verano','Range','Y3:Y26'); 
+% y_generacion_pv_VE=cell2mat(potencia_pv_VE);
